@@ -42,13 +42,10 @@
                 {
                 case 1:
                     return Shoot();
-                    break;
                 case 2:
                     return Reload();
-                    break;
                 case 3:
                     return Block();
-                    break;
                 default:
                     return Block();
                 }
