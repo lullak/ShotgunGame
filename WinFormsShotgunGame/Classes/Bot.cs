@@ -36,18 +36,22 @@
                         return Block();
                 }
             }
-            randomNumber = random.Next(1, 4);
-
-            switch (randomNumber) 
-            {
+            else {
+                randomNumber = random.Next(1, 4);
+                switch (randomNumber) 
+                {
                 case 1:
                     return Shoot();
+                    break;
                 case 2:
                     return Reload();
+                    break;
                 case 3:
                     return Block();
+                    break;
                 default:
                     return Block();
+                }
             }
         }
     }

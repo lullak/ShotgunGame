@@ -45,25 +45,26 @@
         private string Outcome(PlayerAction playerAction, PlayerAction botAction)
         {
             //switch expression för att får enumsen att skriva ut de texterna jag vill
-            string swedishPlayerAction = playerAction switch
-            {
-                PlayerAction.Reload => "Ladda",
-                PlayerAction.Shoot => "Skjuta",
-                PlayerAction.Block => "Blockera",
-                PlayerAction.Shotgun => "Shotgun"
+            //string swedishPlayerAction = playerAction switch
+            //{
+            //    PlayerAction.Reload => "Ladda",
+            //    PlayerAction.Shoot => "Skjuta",
+            //    PlayerAction.Block => "Blockera",
+            //    PlayerAction.Shotgun => "Shotgun"
 
-            };
+            //};
 
-            string swedishBotAction = playerAction switch
-            {
-                PlayerAction.Reload => "Ladda",
-                PlayerAction.Shoot => "Skjuta",
-                PlayerAction.Block => "Blockera",
-                PlayerAction.Shotgun => "Shotgun"
+            //string swedishBotAction = playerAction switch
+            //{
+            //    PlayerAction.Reload => "Ladda",
+            //    PlayerAction.Shoot => "Skjuta",
+            //    PlayerAction.Block => "Blockera",
+            //    PlayerAction.Shotgun => "Shotgun"
+            /*swedishPlayerAction*/
+            /*swedishBotAction*/
+            //};
 
-            };
-
-            string result = $"Spelare: {swedishPlayerAction}, Bot: {swedishBotAction}\n\n";
+            string result = $"Spelare: {playerAction}, Bot: {botAction}\n\n";
 
             //Lite fler texter för flesta scenarionen samt att kunna avgöra när spelet är över
             if (playerAction == PlayerAction.Shoot && botAction == PlayerAction.Shoot)
