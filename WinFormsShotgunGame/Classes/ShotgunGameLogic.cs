@@ -32,7 +32,7 @@
             return false;
         }
 
-        //Tar emot spelarens och botens drag och ger tillbaka outcomen callar även outcome metoden
+        //Tar emot spelarens och botens drag och ger tillbaka outcomen
         public string Turn(PlayerAction playerAction)
         {
             PlayerAction botAction = Bot.BotChosenAction(Player);

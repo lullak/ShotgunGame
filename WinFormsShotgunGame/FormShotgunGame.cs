@@ -36,6 +36,7 @@ namespace WinFormsShotgunGame
                 {
                     Logic = new ShotgunGameLogic();
                     UpdateUI();
+                    labelGameStatus.Text = "Välj ditt drag.";
                 }
                 else
                 {
@@ -76,7 +77,11 @@ namespace WinFormsShotgunGame
 
         private void buttonGameRules_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ladda mot ladda: Båda spelarna får ett skott.\n" +
+            MessageBox.Show("Varje spelare börjar utan skott, och för att få fler skott måste du “Ladda”. " +
+                "Varje gång du laddar får du ett nytt skott. Skjuta mot Skjuta resulterar i att båda spelarna förlorar" +
+                "ett skott, men ingen vinner. Då en spelare samlat på sig tre skott kan denne använda sig av" +
+                "\"Shotgun\", vilket vinner även om motspelaren \"blockar\" eller \"skjuter\"." +
+                "\n\nLadda mot ladda: Båda spelarna får ett skott.\n" +
                 "Ladda mot blocka: Spelaren som laddar får ett skott.\n" +
                 "Blocka mot blocka: Ingenting händer.\n" +
                 "Skjuta mot blocka: Spelaren som skjuter förlorar ett skott.\n" +
