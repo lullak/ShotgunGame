@@ -37,9 +37,9 @@
         //Tar emot spelarens och botens drag och ger tillbaka outcomen
         public string Turn(PlayerAction playerAction)
         {
-            PlayerAction botAction = Bot.BotChosenAction(Player);//Viktigt att ha denna logik först så att spelarens antal skott räknas in korrekt
-            PlayerAction playerActionResult = Player.PlayerChosenAction(playerAction);
-            return Outcome(playerActionResult, botAction);
+            PlayerAction botChosenAction = Bot.BotChosenAction(Player);//Viktigt att ha denna logik först så att spelarens antal skott räknas in korrekt
+            PlayerAction playerChosenAction = Player.PlayerChosenAction(playerAction);
+            return Outcome(playerChosenAction, botChosenAction);
         }
 
         //Kollar på olika scenarion enligt uppgiften och returna en string med det scenariot
