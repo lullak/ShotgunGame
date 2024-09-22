@@ -29,7 +29,7 @@ namespace WinFormsShotgunGame
         {
             labelGameStatus.Text = result;
 
-            if (Logic.IsGameOver(result))
+            if (Logic.GameOver)
             {
                 DialogResult dialogResult = MessageBox.Show("Spela igen?", "Rundan är över", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

@@ -4,11 +4,13 @@
     {
         public Player Player { get; set; }
         public Bot Bot { get; set; }
+        public bool GameOver { get; set; }
        
         public ShotgunGameLogic()
         {
             Player = new Player();
             Bot = new Bot();
+            GameOver = false;
             
         }
 
@@ -35,8 +37,8 @@
         //Tar emot spelarens och botens drag och ger tillbaka outcomen
         public string Turn(PlayerAction playerAction)
         {
-            PlayerAction botAction = Bot.BotChosenAction(Player);
             PlayerAction playerActionResult = Player.PlayerChosenAction(playerAction);
+            PlayerAction botAction = Bot.BotChosenAction(Player);
 
             return Outcome(playerActionResult, botAction);
         }
@@ -44,27 +46,10 @@
         //Kollar på olika scenarion enligt uppgiften och returna en string med det scenariot
         private string Outcome(PlayerAction playerAction, PlayerAction botAction)
         {
-            //switch expression för att får enumsen att skriva ut de texterna jag vill
-            //string swedishPlayerAction = playerAction switch
-            //{
-            //    PlayerAction.Reload => "Ladda",
-            //    PlayerAction.Shoot => "Skjuta",
-            //    PlayerAction.Block => "Blockera",
-            //    PlayerAction.Shotgun => "Shotgun"
 
-            //};
-
-            //string swedishBotAction = playerAction switch
-            //{
-            //    PlayerAction.Reload => "Ladda",
-            //    PlayerAction.Shoot => "Skjuta",
-            //    PlayerAction.Block => "Blockera",
-            //    PlayerAction.Shotgun => "Shotgun"
-            /*swedishPlayerAction*/
-            /*swedishBotAction*/
-            //};
-
-            string result = $"Spelare: {playerAction}, Bot: {botAction}\n\n";
+            string playerActionTranslate = Translate(playerAction);
+            string botActionTranslate = Translate(botAction);
+            string result = $"Spelare: {playerActionTranslate}, Bot: {botActionTranslate}\n\n";
 
             //Lite fler texter för flesta scenarionen samt att kunna avgöra när spelet är över
             if (playerAction == PlayerAction.Shoot && botAction == PlayerAction.Shoot)
@@ -78,10 +63,12 @@
             else if (playerAction == PlayerAction.Shoot && botAction == PlayerAction.Reload)
             {
                 result += "Spelare skjuter Bot!\nSpelare vinner!";
+                GameOver = true;
             }
             else if (playerAction == PlayerAction.Reload && botAction == PlayerAction.Shoot)
             {
                 result += "Bot skjuter spelare!\nBot vinner!";
+                GameOver = true;
             }
             else if (playerAction == PlayerAction.Reload && botAction == PlayerAction.Reload)
             {
@@ -94,29 +81,34 @@
             else if (playerAction == PlayerAction.Shotgun && botAction == PlayerAction.Shotgun)
             {
                 result += "Båda väljer shotgun!\nVi har ingen vinnare!";
+                GameOver = true;
             }
             else if (playerAction == PlayerAction.Shotgun)
             {
                 result += "Spelare använder shotgun!\nSpelare vinner!";
+                GameOver = true;
             }
             else if (botAction == PlayerAction.Shotgun)
             {
                 result += "Bot använder shotgun!\nBot vinner!";
+                GameOver = true;
             }
-
+            
             return result;
         }
-
-        //metod bool som kollar om texten innehåller vinner eller vinnare
-        public bool IsGameOver(string result)
+        
+        
+        //switch method med expressions för att får enumsen att skriva ut de texterna jag vill
+        public string Translate(PlayerAction action)
         {
-            if (result.Contains("vinner") || result.Contains("vinnare"))
+            return action switch
             {
-                return true;
-            }
-            return false;
+                PlayerAction.Reload => "Ladda",
+                PlayerAction.Shoot => "Skjuta",
+                PlayerAction.Block => "Blockera",
+                PlayerAction.Shotgun => "Shotgun"
+
+            };
         }
-
-
     }
 }
