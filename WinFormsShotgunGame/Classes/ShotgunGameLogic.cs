@@ -103,10 +103,9 @@
             return action switch
             {
                 PlayerAction.Reload => "Ladda",
-                PlayerAction.Shoot => "Skjuta",
-                PlayerAction.Block => "Blockera",
+                PlayerAction.Shoot => "Skjut",
+                PlayerAction.Block => "Blocka",
                 PlayerAction.Shotgun => "Shotgun"
-
             };
         }
     }
