@@ -2,11 +2,9 @@
 {
     public class Bot:GamePlayers
     {
-        //Använder mig av Random classen för att randomisera datorns val, samt Playeraction enum som en prop
+        //Använder mig av Random classen för att randomisera datorns val
         //Lägger även till lite logik i valen som boten väljer utifrån uppgiften
         private Random random = new Random();
-        public PlayerAction BotAction { get; set; }
-
 
         public PlayerAction BotChosenAction(Player player)
         {

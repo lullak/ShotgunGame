@@ -2,9 +2,9 @@
 {
     public class ShotgunGameLogic
     {
-        public Player Player { get; set; }
-        public Bot Bot { get; set; }
-        public bool GameOver { get; set; }
+        public Player Player { get; private set; }
+        public Bot Bot { get; private set; }
+        public bool GameOver { get; private set; }
        
         public ShotgunGameLogic()
         {
