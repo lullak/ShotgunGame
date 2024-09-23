@@ -31,7 +31,7 @@
                     case 2:
                         return Block();
                     default:
-                        return Block();
+                        return Block(); //Kanske borde ha varit en error message istället
                 }
             }
             else {
@@ -45,7 +45,7 @@
                 case 3:
                     return Block();
                 default:
-                    return Block();
+                    return Block();//Kanske borde ha varit en error message istället
                 }
             }
         }

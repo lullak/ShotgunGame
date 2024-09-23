@@ -24,7 +24,7 @@
             return false;
         }
 
-        //Check för att kolla om Shorgun knappen ska enablas
+        //Check för att kolla om Shotgun knappen ska enablas
         public bool CanShotgun()
         {
             if (Player.Bullets >= 3)
