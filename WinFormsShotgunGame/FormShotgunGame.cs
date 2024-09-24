@@ -29,6 +29,7 @@ namespace WinFormsShotgunGame
         public void ShowResult(string result)
         {
             labelGameStatus.Text = result;
+            UpdateUI();
 
             if (Logic.GameOver)
             {
@@ -48,32 +49,26 @@ namespace WinFormsShotgunGame
 
         private void buttonShoot_Click(object sender, EventArgs e)
         {
-
             result = Logic.Turn(PlayerAction.Shoot);
             ShowResult(result);
-            UpdateUI();
-
         }
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
             result = Logic.Turn(PlayerAction.Reload);
             ShowResult(result);
-            UpdateUI();
         }
 
         private void buttonBlock_Click(object sender, EventArgs e)
         {
             result = Logic.Turn(PlayerAction.Block);
             ShowResult(result);
-            UpdateUI();
         }
 
         private void buttonShotgun_Click(object sender, EventArgs e)
         {
             result = Logic.Turn(PlayerAction.Shotgun);
             ShowResult(result);
-            UpdateUI();
         }
 
         private void buttonGameRules_Click(object sender, EventArgs e)
