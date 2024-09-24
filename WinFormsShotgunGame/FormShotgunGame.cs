@@ -6,6 +6,7 @@ namespace WinFormsShotgunGame
     {
         //deklarer en ShotgunGameLogic class som är i scope för eventens/metoderna
         public ShotgunGameLogic Logic;
+        public string result;
         // I samband med att formen startar så initeras objectet ShotgunGameLogic och ui:n uppdateras.
         public FormShotgunGame()
         {
@@ -48,7 +49,7 @@ namespace WinFormsShotgunGame
         private void buttonShoot_Click(object sender, EventArgs e)
         {
 
-            string result = Logic.Turn(PlayerAction.Shoot);
+            result = Logic.Turn(PlayerAction.Shoot);
             ShowResult(result);
             UpdateUI();
 
@@ -56,21 +57,21 @@ namespace WinFormsShotgunGame
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Reload);
+            result = Logic.Turn(PlayerAction.Reload);
             ShowResult(result);
             UpdateUI();
         }
 
         private void buttonBlock_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Block);
+            result = Logic.Turn(PlayerAction.Block);
             ShowResult(result);
             UpdateUI();
         }
 
         private void buttonShotgun_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Shotgun);
+            result = Logic.Turn(PlayerAction.Shotgun);
             ShowResult(result);
             UpdateUI();
         }
