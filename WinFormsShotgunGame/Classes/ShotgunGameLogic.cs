@@ -98,7 +98,7 @@
 
 
         //method med switch expressions för att får enumsen att skriva ut de texterna jag vill
-        public string Translate(PlayerAction action)
+        private string Translate(PlayerAction action)
         {
             return action switch
             {
