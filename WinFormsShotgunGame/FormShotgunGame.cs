@@ -48,7 +48,7 @@ namespace WinFormsShotgunGame
         private void buttonShoot_Click(object sender, EventArgs e)
         {
 
-            string result = Logic.Turn(PlayerAction.Shoot);
+            string result = Logic.Outcome(PlayerAction.Shoot);
             ShowResult(result);
             UpdateUI();
 
@@ -56,21 +56,21 @@ namespace WinFormsShotgunGame
 
         private void buttonReload_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Reload);
+            string result = Logic.Outcome(PlayerAction.Reload);
             ShowResult(result);
             UpdateUI();
         }
 
         private void buttonBlock_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Block);
+            string result = Logic.Outcome(PlayerAction.Block);
             ShowResult(result);
             UpdateUI();
         }
 
         private void buttonShotgun_Click(object sender, EventArgs e)
         {
-            string result = Logic.Turn(PlayerAction.Shotgun);
+            string result = Logic.Outcome(PlayerAction.Shotgun);
             ShowResult(result);
             UpdateUI();
         }

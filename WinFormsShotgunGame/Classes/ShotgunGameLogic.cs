@@ -34,17 +34,10 @@
             return false;
         }
 
-        //Tar emot spelarens och botens drag och ger tillbaka outcomen
-        public string Turn(PlayerAction playerAction)
+        public string Outcome(PlayerAction playerAction)
         {
-            PlayerAction botChosenAction = Bot.BotChosenAction(Player);//Viktigt att ha denna logik först så att spelarens antal skott räknas in korrekt
-            PlayerAction playerChosenAction = Player.PlayerChosenAction(playerAction);
-            return Outcome(playerChosenAction, botChosenAction);
-        }
-
-        //Kollar på olika scenarion enligt uppgiften och returna en string med det scenariot
-        private string Outcome(PlayerAction playerAction, PlayerAction botAction)
-        {
+            PlayerAction botAction = Bot.BotChosenAction(Player);//Viktigt att ha denna logik först så att spelarens antal skott räknas in korrekt
+            Player.PlayerChosenAction(playerAction);
 
             string playerActionTranslate = Translate(playerAction);
             string botActionTranslate = Translate(botAction);
