@@ -2,9 +2,9 @@
 {
     public class ShotgunGameLogic
     {
-        public Player Player { get; set; }
-        public Bot Bot { get; set; }
-        public bool GameOver { get; set; }
+        public Player Player { get; private set; }
+        public Bot Bot { get; private set; }
+        public bool GameOver { get; private set; }
        
         public ShotgunGameLogic()
         {
@@ -24,7 +24,7 @@
             return false;
         }
 
-        //Check för att kolla om Shorgun knappen ska enablas
+        //Check för att kolla om Shotgun knappen ska enablas
         public bool CanShotgun()
         {
             if (Player.Bullets >= 3)
@@ -88,18 +88,17 @@
             
             return result;
         }
-        
-        
-        //switch method med expressions för att får enumsen att skriva ut de texterna jag vill
-        public string Translate(PlayerAction action)
+
+
+        //method med switch expressions för att får enumsen att skriva ut de texterna jag vill
+        private string Translate(PlayerAction action)
         {
             return action switch
             {
                 PlayerAction.Reload => "Ladda",
-                PlayerAction.Shoot => "Skjuta",
-                PlayerAction.Block => "Blockera",
+                PlayerAction.Shoot => "Skjut",
+                PlayerAction.Block => "Blocka",
                 PlayerAction.Shotgun => "Shotgun"
-
             };
         }
     }

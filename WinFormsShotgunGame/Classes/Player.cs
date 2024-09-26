@@ -1,12 +1,7 @@
 ﻿namespace WinFormsShotgunGame.Classes
 {
     public class Player : GamePlayers
-    {
-        //Lägger till prop PlayerAction och en metod för att kunna retunera knappvalen senare,
-        //ingen constructor behövs då parentclassen har en
-        public PlayerAction PlayerAction { get; set; }
-
-
+    { 
         public PlayerAction PlayerChosenAction(PlayerAction playerAction)
         {
             switch (playerAction)
