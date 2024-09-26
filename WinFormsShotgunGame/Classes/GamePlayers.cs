@@ -3,8 +3,7 @@
     public class GamePlayers
     {
         //Skapa en Parent class med members som går att använda för både spelare och datorn
-        public int Bullets { get; set; }
-        public bool IsBlocking { get; set; }
+        public int Bullets { get; private set; }
 
 
         public GamePlayers()
